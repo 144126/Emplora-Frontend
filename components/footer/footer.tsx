@@ -1,70 +1,89 @@
-// Importing the necessary modules 
-import { Fragment } from 'react'; 
-import Link from 'next/link';
+import { Fragment } from "react";
+import Link from "next/link";
 
-// Creating the footer component 
 const Footer = () => {
-    // Getting the current year 
-    const currentYear = new Date().getFullYear(); 
+  const currentYear = new Date().getFullYear();
 
-    // Returning the footer component
-    return(
-        <Fragment> 
-            {/* Changed h-[40vh] to h-auto and adjusted padding for mobile */}
-            <footer className="bg-[#121B3C] text-white p-8 md:p-[50px] h-auto">
-                {/* Mobile: flex-col (stacked) 
-                    Desktop: md:flex-row (side-by-side) 
-                */}
-                <section className='flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-10 md:gap-0'>
-                    
-                    {/* Brand Section */}
-                    <section className="max-w-md"> 
-                        <div className="mb-[10px]"> 
-                            <h1 className="text-[25px] font-light"> Emplora </h1>
-                        </div>
-                        <div> 
-                            {/* Removed <br /> so text wraps naturally on small screens */}
-                            <p className="text-[#B6B6B6] text-sm md:text-base"> 
-                                A people focused company creating meaningful work 
-                                experiences and opportunities for growth. 
-                            </p>
-                        </div>
-                    </section>
+  const legalLinks = [
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
+    { label: "Community Guidelines", href: "/community-guidelines" },
+    { label: "Review Submission Policy", href: "/review-submission-policy" },
+    { label: "Disclaimer", href: "/disclaimer" },
+    {
+      label: "Dispute Resolution",
+      href: "/dispute-resolution",
+    },
+  ];
 
-                    {/* Links Section */}
-                    <section className="w-full md:w-auto"> 
-                        {/* Mobile: Vertical list for better thumb-tapping
-                            Desktop: horizontal flex
-                        */}
-                        <ul className="flex flex-col md:flex-row gap-4 md:gap-[40px] text-[#B6B6B6] text-sm md:text-base"> 
-                            <li className="hover:text-white transition-colors"> 
-                                <Link href="/about"> About Us </Link> 
-                            </li>
-                            <li className="hover:text-white transition-colors"> 
-                                <Link href="/reviews"> Company Review </Link> 
-                            </li>
-                            <li className="hover:text-white transition-colors"> 
-                                <Link href="/contact"> Contact Us </Link> 
-                            </li>
-                        </ul>
-                    </section> 
-                </section> 
+  return (
+    <Fragment>
+      <footer className="bg-[#121B3C] p-8 text-white md:p-[50px]">
+        <section className="flex flex-col justify-between gap-10 md:flex-row md:items-start md:gap-12">
+          <section className="max-w-md">
+            <div className="mb-[10px]">
+              <h1 className="text-[25px] font-light">Emplora</h1>
+            </div>
 
-                {/* Divider Line */}
-                <section> 
-                    <hr className="border-t border-[#676767] my-8" />
-                </section>
+            <p className="text-sm text-[#B6B6B6] md:text-base">
+              A people focused company creating meaningful work experiences
+              and opportunities for growth.
+            </p>
+          </section>
 
-                {/* Copyright */}
-                <section> 
-                    <p className="text-center text-[#B6B6B6] text-xs md:text-sm">
-                        &copy; {currentYear} Emplora. All rights reserved.
-                    </p>
-                </section>
-            </footer>
-        </Fragment>
-    )
-}
+          <section>
+            <h2 className="mb-4 text-base font-semibold text-white">
+              Quick Links
+            </h2>
 
-// Exporting the footer component 
-export default Footer; 
+            <ul className="flex flex-col gap-4 text-sm text-[#B6B6B6] md:text-base">
+              <li>
+                <Link href="/about" className="hover:text-white">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/reviews" className="hover:text-white">
+                  Company Review
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-white">
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="mb-4 text-base font-semibold text-white">
+              Legal &amp; Policies
+            </h2>
+
+            <ul className="flex flex-col gap-3 text-sm text-[#B6B6B6] md:text-base">
+              {legalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="hover:text-white">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <hr className="my-8 border-t border-[#676767]" />
+        </section>
+
+        <section>
+          <p className="text-center text-xs text-[#B6B6B6] md:text-sm">
+            &copy; {currentYear} Emplora. All rights reserved.
+          </p>
+        </section>
+      </footer>
+    </Fragment>
+  );
+};
+
+export default Footer;
