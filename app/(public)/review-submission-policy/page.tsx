@@ -39,7 +39,7 @@ export default function ReviewSubmissionPolicy() {
               Review Submission Policy
             </h1>
             <p className="mt-5 text-sm text-gray-300">
-              Last Updated: 02-06-2024
+              Last Updated: 02-06-2026
             </p>
           </div>
         </section>
