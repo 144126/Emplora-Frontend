@@ -534,11 +534,11 @@ setSuccess('Company profile created successfully.');
                 <div className="space-y-2 text-sm font-medium text-[#0F172A]">
                   Logo <span className="font-normal text-[#94A3B8]">(optional)</span>
                   {logoPreviewUrl ? (
-                    <div className="flex items-center gap-3 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFF] px-3">
-                      <div className="flex gap-3 items-center p-3 justify-between w-full">
-                        <div className="flex gap-2 items-center">
-                          <p className="truncate text-sm text-[#0F172A]">{logoFile?.name}</p>
-                          <p className="text-xs text-[#64748B]">
+                    <div className="flex min-w-0 items-center gap-3 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFF] px-3">
+                      <div className="flex min-w-0 flex-1 gap-3 items-center p-3 justify-between">
+                        <div className="flex min-w-0 gap-2 items-center">
+                          <p className="min-w-0 truncate text-sm text-[#0F172A]">{logoFile?.name}</p>
+                          <p className="shrink-0 text-xs text-[#64748B]">
                             {logoFile && (logoFile.size / 1024).toFixed(0)} KB
                           </p>
                         </div>
@@ -555,7 +555,7 @@ setSuccess('Company profile created successfully.');
                       <button
                         type="button"
                         onClick={removeLogo}
-                        className="text-xs font-medium text-[#DC2626] hover:underline"
+                        className="shrink-0 text-xs font-medium text-[#DC2626] hover:underline"
                       >
                         Remove
                       </button>
