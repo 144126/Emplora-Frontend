@@ -375,7 +375,7 @@ setSuccess('Company profile created successfully.');
         </section>
 
         <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
-          <div className="grid gap-10 xl:grid-cols-[1.1fr_0.9fr]">
+          <div className="grid grid-cols-1 gap-10 xl:grid-cols-[1.1fr_0.9fr]">
             <div className="rounded-[32px] bg-[#334EAC] px-8 py-10 text-white shadow-[0_25px_50px_-25px_rgba(51,78,172,0.35)] sm:px-10 sm:py-12">
               <div className="space-y-6">
                 <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white shadow-sm shadow-white/10">
