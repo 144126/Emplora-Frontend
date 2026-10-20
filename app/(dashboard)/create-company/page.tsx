@@ -537,7 +537,9 @@ setSuccess('Company profile created successfully.');
                     <div className="flex min-w-0 items-center gap-3 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFF] px-3">
                       <div className="flex min-w-0 flex-1 gap-3 items-center p-3 justify-between">
                         <div className="flex min-w-0 gap-2 items-center">
-                          <p className="min-w-0 truncate text-sm text-[#0F172A]">{logoFile?.name}</p>
+                          <p className="min-w-0 truncate text-sm text-[#0F172A]">
+                            {logoFile?.name}
+                          </p>
                           <p className="shrink-0 text-xs text-[#64748B]">
                             {logoFile && (logoFile.size / 1024).toFixed(0)} KB
                           </p>
